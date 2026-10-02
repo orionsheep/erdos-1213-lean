@@ -1,0 +1,32 @@
+/tmp/jsp-001018-public-check/.downloads/lean-4.34.1-darwin_aarch64.tar.zst: OK
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+{"package": "mathlib", "actual_git_head": "d13f23b723b8a846827a245b89c10fc7d3f11612", "verified": true}
+{"package": "LeanSearchClient", "actual_git_head": "ddf04cf3949fa556442341e87d47f9f6e6074707", "verified": true}
+{"package": "plausible", "actual_git_head": "118aa17ee84656b8bd727fef7c458ee8c833385c", "verified": true}
+{"package": "importGraph", "actual_git_head": "e928b72544873815af278d38681b31c0293588e3", "verified": true}
+{"package": "Qq", "actual_git_head": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259", "verified": true}
+{"package": "aesop", "actual_git_head": "355695d523e41d0554926416cba2a2b3544fbbc9", "verified": true}
+{"package": "Cli", "actual_git_head": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204", "verified": true}
+{"package": "proofwidgets", "actual_git_head": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5", "verified": true}
+{"package": "batteries", "actual_git_head": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2", "verified": true}
+Frozen Lake manifest written from verified actual Git checkouts and upstream pins.
+{
+  "modules": [
+    "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Group.Int.Defs",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Order.Interval.Finset.Nat",
+    "Mathlib.Tactic.Positivity.Basic",
+    "Mathlib.Tactic.Ring.RingNF",
+    "Mathlib.Tactic.SimpRw"
+  ],
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "mode": "content-addressed cache of listed modules and all imports"
+}
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 938 file(s)

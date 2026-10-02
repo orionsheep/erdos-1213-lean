@@ -1,0 +1,15 @@
+{
+  "modules": [
+    "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Group.Int.Defs",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Order.Interval.Finset.Nat",
+    "Mathlib.Tactic.Positivity.Basic",
+    "Mathlib.Tactic.Ring.RingNF",
+    "Mathlib.Tactic.SimpRw"
+  ],
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "mode": "content-addressed cache of listed modules and all imports"
+}

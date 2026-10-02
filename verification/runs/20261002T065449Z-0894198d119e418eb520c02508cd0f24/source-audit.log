@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "file": "JSP1213/Basic.lean",
+      "sha256": "1649ae0268538fdd9a00c9ba7d55f6b6b483693aa23e0bcd6aebca9a53989045",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Dyadic.lean",
+      "sha256": "c117beeda1f740a81b3bfde06d4a3f0c514d5ee2f6f14fe27bb829856d9a0dd9",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/IntegerBridge.lean",
+      "sha256": "d464ce2e53087f3e05c3a0ff960cd1857edf51a2f3a8ec8ee5e9e4c982c89871",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Main.lean",
+      "sha256": "a90e3fbed18a93d6d6c3797b378506c863b870c1f0ad0918538341f5722af28c",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Statement.lean",
+      "sha256": "bfea4fe48c5b1d70bc39e922cd9ba18edec37a5ca113740aa71fc6cfa2a17a4b",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213.lean",
+      "sha256": "fae8f4ff549a1f3addb0e0a3d5d05834340dd27189eea5f9b10f4c5b8f4e0bc6",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "Verification.lean",
+      "sha256": "65a075e02db42f984ddfb49fd457a34605eb75c76704274386097257f1443af2",
+      "prohibited_tokens": []
+    }
+  ],
+  "status": "passed",
+  "scope": "static source only; dependencies and transitive axioms require actual Lean checks"
+}

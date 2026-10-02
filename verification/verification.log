@@ -1,0 +1,115 @@
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+Lean and all library repository versions match the fixed pins.
+{
+  "Cli": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+  "LeanSearchClient": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+  "Qq": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+  "aesop": "355695d523e41d0554926416cba2a2b3544fbbc9",
+  "batteries": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+  "importGraph": "e928b72544873815af278d38681b31c0293588e3",
+  "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "plausible": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+  "proofwidgets": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5"
+}
+{
+  "files": [
+    {
+      "file": "JSP1213/Basic.lean",
+      "sha256": "1649ae0268538fdd9a00c9ba7d55f6b6b483693aa23e0bcd6aebca9a53989045",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Dyadic.lean",
+      "sha256": "c117beeda1f740a81b3bfde06d4a3f0c514d5ee2f6f14fe27bb829856d9a0dd9",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/IntegerBridge.lean",
+      "sha256": "d464ce2e53087f3e05c3a0ff960cd1857edf51a2f3a8ec8ee5e9e4c982c89871",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Main.lean",
+      "sha256": "a90e3fbed18a93d6d6c3797b378506c863b870c1f0ad0918538341f5722af28c",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213/Statement.lean",
+      "sha256": "bfea4fe48c5b1d70bc39e922cd9ba18edec37a5ca113740aa71fc6cfa2a17a4b",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "JSP1213.lean",
+      "sha256": "fae8f4ff549a1f3addb0e0a3d5d05834340dd27189eea5f9b10f4c5b8f4e0bc6",
+      "prohibited_tokens": []
+    },
+    {
+      "file": "Verification.lean",
+      "sha256": "65a075e02db42f984ddfb49fd457a34605eb75c76704274386097257f1443af2",
+      "prohibited_tokens": []
+    }
+  ],
+  "status": "passed",
+  "scope": "static source only; dependencies and transitive axioms require actual Lean checks"
+}
+Removed generated project proof outputs; fixed dependency binaries retained.
+✔ [954/960] Built JSP1213.Statement (5.0s)
+✔ [955/960] Built JSP1213.IntegerBridge (1.8s)
+✔ [956/960] Built JSP1213.Basic (1.9s)
+✔ [957/960] Built JSP1213.Dyadic (1.9s)
+✔ [958/960] Built JSP1213.Main (1.5s)
+✔ [959/960] Built JSP1213 (1.5s)
+Build completed successfully (960 jobs).
+JSP1213.erdos_1213_nat : JSP1213.OriginalProblem
+JSP1213.erdos_1213 : JSP1213.IntegerProblem
+def JSP1213.OriginalProblem : Prop :=
+∀ (A K : ℕ),
+  0 < A → 0 < K → ∃ F, ∀ (n : ℕ) (a : ℕ → ℕ), JSP1213.GoodPrefix A K n a → F < a (n - 1) → JSP1213.RepeatedSums a n
+def JSP1213.IntegerProblem : Prop :=
+∀ (A K : ℤ),
+  0 < A →
+    0 < K →
+      ∃ F, ∀ (n : ℕ) (z : ℕ → ℤ), JSP1213.GoodIntegerPrefix A K n z → F < z (n - 1) → JSP1213.RepeatedIntegerSums z n
+structure JSP1213.GoodPrefix (A K n : ℕ) (a : ℕ → ℕ) : Prop
+number of parameters: 4
+fields:
+  JSP1213.GoodPrefix.length_pos : 0 < n
+  JSP1213.GoodPrefix.first : a 0 = A
+  JSP1213.GoodPrefix.strict : ∀ {i j : ℕ}, i < j → j < n → a i < a j
+  JSP1213.GoodPrefix.gaps : ∀ (i : ℕ), i + 1 < n → a (i + 1) ≤ a i + K
+constructor:
+  JSP1213.GoodPrefix.mk {A K n : ℕ} {a : ℕ → ℕ} (length_pos : 0 < n) (first : a 0 = A)
+    (strict : ∀ {i j : ℕ}, i < j → j < n → a i < a j) (gaps : ∀ (i : ℕ), i + 1 < n → a (i + 1) ≤ a i + K) :
+    JSP1213.GoodPrefix A K n a
+structure JSP1213.GoodIntegerPrefix (A K : ℤ) (n : ℕ) (z : ℕ → ℤ) : Prop
+number of parameters: 4
+fields:
+  JSP1213.GoodIntegerPrefix.length_pos : 0 < n
+  JSP1213.GoodIntegerPrefix.first : z 0 = A
+  JSP1213.GoodIntegerPrefix.strict : ∀ {i j : ℕ}, i < j → j < n → z i < z j
+  JSP1213.GoodIntegerPrefix.gaps : ∀ (i : ℕ), i + 1 < n → z (i + 1) ≤ z i + K
+constructor:
+  JSP1213.GoodIntegerPrefix.mk {A K : ℤ} {n : ℕ} {z : ℕ → ℤ} (length_pos : 0 < n) (first : z 0 = A)
+    (strict : ∀ {i j : ℕ}, i < j → j < n → z i < z j) (gaps : ∀ (i : ℕ), i + 1 < n → z (i + 1) ≤ z i + K) :
+    JSP1213.GoodIntegerPrefix A K n z
+def JSP1213.RepeatedSums : (ℕ → ℕ) → ℕ → Prop :=
+fun a n =>
+  ∃ l r l' r', l < r ∧ r ≤ n ∧ l' < r' ∧ r' ≤ n ∧ (l, r) ≠ (l', r') ∧ JSP1213.blockSum a l r = JSP1213.blockSum a l' r'
+def JSP1213.RepeatedIntegerSums : (ℕ → ℤ) → ℕ → Prop :=
+fun z n =>
+  ∃ l r l' r',
+    l < r ∧
+      r ≤ n ∧ l' < r' ∧ r' ≤ n ∧ (l, r) ≠ (l', r') ∧ JSP1213.integerBlockSum z l r = JSP1213.integerBlockSum z l' r'
+def JSP1213.blockSum : (ℕ → ℕ) → ℕ → ℕ → ℕ :=
+fun a l r => ∑ i ∈ Finset.Ico l r, a i
+def JSP1213.integerBlockSum : (ℕ → ℤ) → ℕ → ℕ → ℤ :=
+fun z l r => ∑ i ∈ Finset.Ico l r, z i
+'JSP1213.erdos_1213_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP1213.erdos_1213' depends on axioms: [propext, Classical.choice, Quot.sound]
+{
+  "run_id": "20261002T065449Z-0894198d119e418eb520c02508cd0f24",
+  "kind": "actual",
+  "status": "verified",
+  "errors": []
+}

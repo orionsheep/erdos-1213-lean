@@ -1,0 +1,46 @@
+JSP1213.erdos_1213_nat : JSP1213.OriginalProblem
+JSP1213.erdos_1213 : JSP1213.IntegerProblem
+def JSP1213.OriginalProblem : Prop :=
+∀ (A K : ℕ),
+  0 < A → 0 < K → ∃ F, ∀ (n : ℕ) (a : ℕ → ℕ), JSP1213.GoodPrefix A K n a → F < a (n - 1) → JSP1213.RepeatedSums a n
+def JSP1213.IntegerProblem : Prop :=
+∀ (A K : ℤ),
+  0 < A →
+    0 < K →
+      ∃ F, ∀ (n : ℕ) (z : ℕ → ℤ), JSP1213.GoodIntegerPrefix A K n z → F < z (n - 1) → JSP1213.RepeatedIntegerSums z n
+structure JSP1213.GoodPrefix (A K n : ℕ) (a : ℕ → ℕ) : Prop
+number of parameters: 4
+fields:
+  JSP1213.GoodPrefix.length_pos : 0 < n
+  JSP1213.GoodPrefix.first : a 0 = A
+  JSP1213.GoodPrefix.strict : ∀ {i j : ℕ}, i < j → j < n → a i < a j
+  JSP1213.GoodPrefix.gaps : ∀ (i : ℕ), i + 1 < n → a (i + 1) ≤ a i + K
+constructor:
+  JSP1213.GoodPrefix.mk {A K n : ℕ} {a : ℕ → ℕ} (length_pos : 0 < n) (first : a 0 = A)
+    (strict : ∀ {i j : ℕ}, i < j → j < n → a i < a j) (gaps : ∀ (i : ℕ), i + 1 < n → a (i + 1) ≤ a i + K) :
+    JSP1213.GoodPrefix A K n a
+structure JSP1213.GoodIntegerPrefix (A K : ℤ) (n : ℕ) (z : ℕ → ℤ) : Prop
+number of parameters: 4
+fields:
+  JSP1213.GoodIntegerPrefix.length_pos : 0 < n
+  JSP1213.GoodIntegerPrefix.first : z 0 = A
+  JSP1213.GoodIntegerPrefix.strict : ∀ {i j : ℕ}, i < j → j < n → z i < z j
+  JSP1213.GoodIntegerPrefix.gaps : ∀ (i : ℕ), i + 1 < n → z (i + 1) ≤ z i + K
+constructor:
+  JSP1213.GoodIntegerPrefix.mk {A K : ℤ} {n : ℕ} {z : ℕ → ℤ} (length_pos : 0 < n) (first : z 0 = A)
+    (strict : ∀ {i j : ℕ}, i < j → j < n → z i < z j) (gaps : ∀ (i : ℕ), i + 1 < n → z (i + 1) ≤ z i + K) :
+    JSP1213.GoodIntegerPrefix A K n z
+def JSP1213.RepeatedSums : (ℕ → ℕ) → ℕ → Prop :=
+fun a n =>
+  ∃ l r l' r', l < r ∧ r ≤ n ∧ l' < r' ∧ r' ≤ n ∧ (l, r) ≠ (l', r') ∧ JSP1213.blockSum a l r = JSP1213.blockSum a l' r'
+def JSP1213.RepeatedIntegerSums : (ℕ → ℤ) → ℕ → Prop :=
+fun z n =>
+  ∃ l r l' r',
+    l < r ∧
+      r ≤ n ∧ l' < r' ∧ r' ≤ n ∧ (l, r) ≠ (l', r') ∧ JSP1213.integerBlockSum z l r = JSP1213.integerBlockSum z l' r'
+def JSP1213.blockSum : (ℕ → ℕ) → ℕ → ℕ → ℕ :=
+fun a l r => ∑ i ∈ Finset.Ico l r, a i
+def JSP1213.integerBlockSum : (ℕ → ℤ) → ℕ → ℕ → ℤ :=
+fun z l r => ∑ i ∈ Finset.Ico l r, z i
+'JSP1213.erdos_1213_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP1213.erdos_1213' depends on axioms: [propext, Classical.choice, Quot.sound]

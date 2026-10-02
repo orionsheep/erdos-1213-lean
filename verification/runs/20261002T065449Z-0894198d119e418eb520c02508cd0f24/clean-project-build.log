@@ -1,0 +1,8 @@
+Removed generated project proof outputs; fixed dependency binaries retained.
+✔ [954/960] Built JSP1213.Statement (5.0s)
+✔ [955/960] Built JSP1213.IntegerBridge (1.8s)
+✔ [956/960] Built JSP1213.Basic (1.9s)
+✔ [957/960] Built JSP1213.Dyadic (1.9s)
+✔ [958/960] Built JSP1213.Main (1.5s)
+✔ [959/960] Built JSP1213 (1.5s)
+Build completed successfully (960 jobs).
