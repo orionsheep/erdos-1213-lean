@@ -1,0 +1,15 @@
+.lake/
+.tools/
+.downloads/
+.DS_Store
+__pycache__/
+*.pyc
+*.olean
+*.ilean
+*.trace
+*.c
+*.o
+verification/build-scratch/
+evidence/papers/*.pdf
+evidence/mathlib-*-api.lean
+verification/runs/*/.record.lock
